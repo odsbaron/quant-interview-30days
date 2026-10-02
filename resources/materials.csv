@@ -1,0 +1,16 @@
+id,title,relative_path,kind,usage,scope_note
+core_questions,可直接训练题库,datasets/reclassified/题库_可直接训练.csv,csv,按当日主题选少量补充题并核对原始题面,可用标签是整理标记；仍可能有多题合并或残句
+probability_notes,量化紫皮书概率笔记,数学知识刷题/量化紫皮书.tex,tex,补充概率建模与典型题推导；每次只读对应小节,本地整理讲义；30天计划不要求读完全书或编译TeX
+hot100_hash,哈希母题专项,hot100/哈希母题专项Notebook.ipynb,notebook,对照哈希映射与计数模板并手写一道变式,只作阅读参考；本仓库不复制或自动执行源Notebook
+hot100_window,窗口母题专项,hot100/窗口母题专项Notebook.ipynb,notebook,辨认窗口可扩缩条件并对照滑动窗口模板,只作阅读参考；先自行解题再查示例
+hot100_binary,二分母题专项,hot100/二分母题专项Notebook.ipynb,notebook,对照区间不变量与边界处理并手写变式,只作阅读参考；示例覆盖不代表熟练掌握
+hot100_dp1,动态规划I母题专项,hot100/动态规划I母题专项Notebook.ipynb,notebook,复核状态定义与转移方程并说明初始化和遍历顺序,只作阅读参考；计划限定基础动态规划
+hot100_stack,栈队列堆母题专项,hot100/栈队列堆母题专项Notebook.ipynb,notebook,补充栈与队列的题型识别和复杂度分析,含堆等扩展内容；按当天范围选择阅读
+hot100_tree,二叉树母题专项,hot100/二叉树母题专项Notebook.ipynb,notebook,对照递归返回值与层序遍历并手写一道树题,只作阅读参考；本仓库不自动运行源代码
+ds_notes,数据结构系统笔记优化版,数据结构笔记与Notebook/数据结构系统笔记_优化版.md,markdown,查概念与模板的原因并复核时间空间复杂度,系统性长笔记；不要求30天内全部阅读
+qr_wiki,量化交易策略研究员岗位地图,业务复习/量化岗位笔试Wiki/01_岗位地图/量化交易策略研究员.md,markdown,用研究假设到样本外和成本收益的链条练习口述,跨资料归纳；不代表任何公司的现行考试大纲
+qd_wiki,量化开发工程师岗位地图,业务复习/量化岗位笔试Wiki/01_岗位地图/量化开发工程师.md,markdown,用契约与状态并发故障验证框架回答系统题,跨资料归纳；性能与规则须按具体场景验证
+data_wiki,量化数据工程师岗位地图,业务复习/量化岗位笔试Wiki/01_岗位地图/量化数据工程师.md,markdown,复核事件时间与点时数据质量血缘及恢复思路,跨资料归纳；阅读不能代替管道实现与验证
+factor_ic,因子研究与IC测试入口,业务复习/factor_research_ic/README.md,markdown,围绕因子与未来收益对齐和IC及分层回测补充阅读,向量化筛选方向；撮合敏感策略需要事件驱动仿真
+microstructure,高频做市基本知识,业务知识/高频做市基本知识.md,markdown,解释订单簿与价差库存逆向选择及执行成本,本地业务笔记；示例参数与市场规则非当前外部核验
+optiver_overview,2026三类测评知识点总览,Optiver_笔试资料整理/03_notes/2026_三类测评知识点总览.md,markdown,用概率估算与数列模式做短时练习并识别推断边界,历史本地整理；部分来自OCR与录屏推断；非当前官方规则
