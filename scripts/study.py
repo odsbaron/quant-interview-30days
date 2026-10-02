@@ -25,7 +25,7 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 
 def csv_text(rows: list[dict[str, str]], fields: list[str]) -> str:
     buffer = io.StringIO(newline="")
-    writer = csv.DictWriter(buffer, fieldnames=fields)
+    writer = csv.DictWriter(buffer, fieldnames=fields, lineterminator="\n")
     writer.writeheader()
     writer.writerows(rows)
     return buffer.getvalue()
