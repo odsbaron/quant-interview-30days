@@ -1,0 +1,603 @@
+{
+  "version": 1,
+  "resources": [
+    {
+      "id": "core_questions",
+      "source_relative_path": "datasets/reclassified/题库_可直接训练.csv",
+      "source_sha256": "a6e6a5cf05e6992a159dc81b605dda50aadec1a01a056df1451c236f5bc09a01",
+      "public_path": "resources/readers/core_questions.md",
+      "transformation": "CSV records to categorized Markdown; original wording preserved"
+    },
+    {
+      "id": "probability_notes",
+      "source_relative_path": "数学知识刷题/量化紫皮书.tex",
+      "source_sha256": "2697000dbf02c550e2f9b51a84a996297c4304f06fc1c57789d5fa3e7eee92f2",
+      "public_path": "resources/readers/probability_notes.md",
+      "transformation": "TeX body to split GitHub Markdown via Pandoc; no compilation"
+    },
+    {
+      "id": "hot100_hash",
+      "source_relative_path": "hot100/哈希母题专项Notebook.ipynb",
+      "source_sha256": "7a603ec0be1cfb67904380f2cbff2f24a22de8a3a16b70fde27cc78ec3d69886",
+      "public_path": "resources/readers/hot100_hash.md",
+      "transformation": "notebook cells to Markdown; outputs/metadata omitted",
+      "omitted_cells": []
+    },
+    {
+      "id": "hot100_window",
+      "source_relative_path": "hot100/窗口母题专项Notebook.ipynb",
+      "source_sha256": "0f2fd6680a074f551395dd066c4f261ae9b518f50aa2e421f430d82e0145fffc",
+      "public_path": "resources/readers/hot100_window.md",
+      "transformation": "notebook cells to Markdown; outputs/metadata omitted",
+      "omitted_cells": []
+    },
+    {
+      "id": "hot100_binary",
+      "source_relative_path": "hot100/二分母题专项Notebook.ipynb",
+      "source_sha256": "05dc255ee7f1c7d292b4487b4af57c0714797b38302bf9c8744cf267a3c57b98",
+      "public_path": "resources/readers/hot100_binary.md",
+      "transformation": "notebook cells to Markdown; outputs/metadata omitted",
+      "omitted_cells": [
+        {
+          "index": 0,
+          "reason": "unrelated network/billing/credential/platform cell"
+        },
+        {
+          "index": 1,
+          "reason": "unrelated network/billing/credential/platform cell"
+        },
+        {
+          "index": 3,
+          "reason": "unrelated network/billing/credential/platform cell"
+        }
+      ]
+    },
+    {
+      "id": "hot100_dp1",
+      "source_relative_path": "hot100/动态规划I母题专项Notebook.ipynb",
+      "source_sha256": "cf955b60df18c06675b6625530ab5002043f736ce950f7137f842315cd4acb56",
+      "public_path": "resources/readers/hot100_dp1.md",
+      "transformation": "notebook cells to Markdown; outputs/metadata omitted",
+      "omitted_cells": [
+        {
+          "index": 0,
+          "reason": "unrelated network/billing/credential/platform cell"
+        }
+      ]
+    },
+    {
+      "id": "hot100_stack",
+      "source_relative_path": "hot100/栈队列堆母题专项Notebook.ipynb",
+      "source_sha256": "8846ae13bc9a20d6d90faff3fab495263e0a613b628daa6a959a2440ed977e3b",
+      "public_path": "resources/readers/hot100_stack.md",
+      "transformation": "notebook cells to Markdown; outputs/metadata omitted",
+      "omitted_cells": []
+    },
+    {
+      "id": "hot100_tree",
+      "source_relative_path": "hot100/二叉树母题专项Notebook.ipynb",
+      "source_sha256": "0ee210ae187fad7879bc96ce722f9348ec8cfd89d91fd9603f0af3e21b3daee4",
+      "public_path": "resources/readers/hot100_tree.md",
+      "transformation": "notebook cells to Markdown; outputs/metadata omitted",
+      "omitted_cells": []
+    },
+    {
+      "id": "ds_notes",
+      "source_relative_path": "数据结构笔记与Notebook/数据结构系统笔记_优化版.md",
+      "source_sha256": "f56e99822a8f37ec8fba911f09410745b30a3acf5e4b6554cc3306566e777783",
+      "public_path": "resources/readers/ds_notes.md",
+      "transformation": "Markdown readable view with relocated source references"
+    },
+    {
+      "id": "qr_wiki",
+      "source_relative_path": "业务复习/量化岗位笔试Wiki/01_岗位地图/量化交易策略研究员.md",
+      "source_sha256": "624725dc1df5d6670d456068e14721ba8ad08fd5c7e681455edaaee23474f6ea",
+      "public_path": "resources/readers/qr_wiki.md",
+      "transformation": "Markdown readable view with relocated source references"
+    },
+    {
+      "id": "qd_wiki",
+      "source_relative_path": "业务复习/量化岗位笔试Wiki/01_岗位地图/量化开发工程师.md",
+      "source_sha256": "7e47ba495cf9a54bff92c799d973d0b54407a3f028e19cfd6a4834f4a5e62810",
+      "public_path": "resources/readers/qd_wiki.md",
+      "transformation": "Markdown readable view with relocated source references"
+    },
+    {
+      "id": "data_wiki",
+      "source_relative_path": "业务复习/量化岗位笔试Wiki/01_岗位地图/量化数据工程师.md",
+      "source_sha256": "4fb04219e614f1def6de7ae6b6563f42b2c8630ce6282ca23a3507c3d7a42045",
+      "public_path": "resources/readers/data_wiki.md",
+      "transformation": "Markdown readable view with relocated source references"
+    },
+    {
+      "id": "factor_ic",
+      "source_relative_path": "业务复习/factor_research_ic/README.md",
+      "source_sha256": "7902ceeb635978bf1c6ec657b1328c127bc94050c7cc0746aab184085b594d25",
+      "public_path": "resources/readers/factor_ic.md",
+      "transformation": "Markdown readable view with relocated source references"
+    },
+    {
+      "id": "microstructure",
+      "source_relative_path": "业务知识/高频做市基本知识.md",
+      "source_sha256": "ddd02bb674e926d0c4376afb650766e345ea585ef6a8365ac764562da4c25f13",
+      "public_path": "resources/readers/microstructure.md",
+      "transformation": "Markdown readable view with relocated source references"
+    },
+    {
+      "id": "optiver_overview",
+      "source_relative_path": "Optiver_笔试资料整理/03_notes/2026_三类测评知识点总览.md",
+      "source_sha256": "1e80341ab61007b064cd11007fcb295a0f73686af346de008016de955155b256",
+      "public_path": "resources/readers/optiver_overview.md",
+      "transformation": "Markdown readable view with relocated source references"
+    }
+  ],
+  "references": [
+    {
+      "source_relative_path": "业务复习/量化交易策略研究员_拆解/01_高频数据清洗与质量评估/章节梳理.md",
+      "source_sha256": "dbc02f6a7eb6f9886c89707574408155b9ced69bff4a0e92b7b61c09abd0a6cd",
+      "public_path": "resources/readers/references/aad00e98bac1.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化交易策略研究员_拆解/02_高频因子构造与有效性检验/章节梳理.md",
+      "source_sha256": "62e1a92dcd54d758e2f1c452030b98f5baa81b3916bfcb52d2df41887a4afc6d",
+      "public_path": "resources/readers/references/66834d2bad23.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化交易策略研究员_拆解/05_组合构建与风险约束/章节梳理.md",
+      "source_sha256": "652590301519912863f0e75dad2fb1d761d7c576af82045f65fd66decdfbd9e2",
+      "public_path": "resources/readers/references/3d33bf1d84f0.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化交易策略研究员_拆解/06_回测系统与性能评估/章节梳理.md",
+      "source_sha256": "d4c155678f345583103f1cc666bc72d90f28aa47cd56248204d374a324cf4ca1",
+      "public_path": "resources/readers/references/873a6bffaf78.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化交易策略研究员_拆解/10_机器学习模型可解释性/章节梳理.md",
+      "source_sha256": "c56c56c4984b408662ebff89306ef0b32050a82724a77efe740a5919bdcd686d",
+      "public_path": "resources/readers/references/1140b6f059a2.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化交易策略研究员_拆解/11_多品种跨市场套利/章节梳理.md",
+      "source_sha256": "528c80ea2bf615ed7ccc6547802028c32dadb826caf56ca83dea853bcd937e87",
+      "public_path": "resources/readers/references/68cb9056b03b.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化交易策略研究员_拆解/12_异常检测与风控/章节梳理.md",
+      "source_sha256": "c96c260e03ec456b2951b44e49678fc88f132df1046d2cd8efbf7d6b76e7250d",
+      "public_path": "resources/readers/references/33e48c9cffe7.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化交易策略研究员_拆解/20_面试者综合案例实战/章节梳理.md",
+      "source_sha256": "04189a1cc6a8e524e609ccee0967afdd9d5464cbde273e7425a544103ad022b5",
+      "public_path": "resources/readers/references/2a5b68070393.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化岗位笔试Wiki/02_主题分析/02_研究与回测/README.md",
+      "source_sha256": "c5b7aa03952d8dba1368a18cc0ace26516747eabefcd1cc1c7b76b042b534407",
+      "public_path": "resources/readers/references/770a20da24e3.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化开发工程师_拆解/01_实时行情接入与解析/章节梳理.md",
+      "source_sha256": "abdbacab595d7c3d6dedf0a7bd7a9fae30ccb536c9c5d0d733e6e1adf536f088",
+      "public_path": "resources/readers/references/b2229405bde7.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化开发工程师_拆解/02_低延迟撮合模拟引擎开发/章节梳理.md",
+      "source_sha256": "0e15e88bcd9c5c88d133ab8b0fdbc0bc40207c4abf779c542df4b538a30915dc",
+      "public_path": "resources/readers/references/ba6bdfa343b6.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化开发工程师_拆解/03_高频回测框架搭建/章节梳理.md",
+      "source_sha256": "9f561e5f1f02938e9fe48f6316a754e36eae9d8b7ed7a879222562bac9481239",
+      "public_path": "resources/readers/references/7e53fa40d9ce.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化开发工程师_拆解/06_实时风控与合规监控/章节梳理.md",
+      "source_sha256": "13cb3b9e983f958b6b1c1d18384ee0b0639bb4c4c97e16d45ca00750e6c4eb16",
+      "public_path": "resources/readers/references/cadcd1f9e3aa.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化开发工程师_拆解/07_高性能执行算法(Algo)开发/章节梳理.md",
+      "source_sha256": "2eeef3b404d96b1eed591aa3153bf945f37bc0de0aaac6646358c28102242876",
+      "public_path": "resources/readers/references/953e633a5f6e.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化开发工程师_拆解/12_网络与系统调优/章节梳理.md",
+      "source_sha256": "6050527bf21e9c833749ec80afaffd611e2eeae8568fff8f6cc2671b1a75ecc4",
+      "public_path": "resources/readers/references/ce659780c772.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化开发工程师_拆解/13_日志、监控与可观测性/章节梳理.md",
+      "source_sha256": "70ce0953811770fa0f047b576259f570c297d48e14b0337a2df77fe12fb622ce",
+      "public_path": "resources/readers/references/f40e54304fbc.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化开发工程师_拆解/16_文档、测试与持续交付/章节梳理.md",
+      "source_sha256": "0b60489631fce2fa78eaeff20d73a3cb4ff61661c288be962db4ff4d886deb30",
+      "public_path": "resources/readers/references/6e55f7b6b250.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化岗位笔试Wiki/02_主题分析/03_执行风控与治理/README.md",
+      "source_sha256": "c24ae17d3b98271345179f61bff18ef35fab7fd4253dde46969808ee4d802215",
+      "public_path": "resources/readers/references/c0cf98e471d7.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化数据工程师_拆解/01_Tick数据清洗与标准化/章节梳理.md",
+      "source_sha256": "0b1d80c0a8d0412624bafbb79c2e202620e91a9d4ab703b74931f883a5c94259",
+      "public_path": "resources/readers/references/260183506bd2.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化数据工程师_拆解/02_订单簿数据处理与分析/章节梳理.md",
+      "source_sha256": "6a9cc22c4a56bf5a92fa1312afb705e72059e44343cb6bb6df0211c6afc8e540",
+      "public_path": "resources/readers/references/3b94c4add797.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化数据工程师_拆解/05_低延迟数据管道设计与实现/章节梳理.md",
+      "source_sha256": "15572b18af212c6cb063d24b257421d68ce17e90a33867c5f098cc8222fae573",
+      "public_path": "resources/readers/references/283c791863ff.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化数据工程师_拆解/06_数据质量监控与异常检测/章节梳理.md",
+      "source_sha256": "cc2f3ab5b47e076c015e1f41d01c0a4024e7e81f970b414b01403fb52e6ead35",
+      "public_path": "resources/readers/references/af857dddcf95.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化数据工程师_拆解/11_实时数据处理与流式计算/章节梳理.md",
+      "source_sha256": "c1c94908cf7af0e0bbea341a2313e445f39f72af613ba0c17cb8c56c8e2fdd57",
+      "public_path": "resources/readers/references/223b187ecc53.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化数据工程师_拆解/21_量化数据系统的架构设计与优化/章节梳理.md",
+      "source_sha256": "570df786d37d862d29084e595a60df492ea4413a5c5db1b33147c1a4bea9f066",
+      "public_path": "resources/readers/references/db622d56732b.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化数据工程师_拆解/23_跨市场数据整合与全球量化策略/章节梳理.md",
+      "source_sha256": "240cbbece86095087f83263f08d52954994c82170dd36ee77852253c938d1aa4",
+      "public_path": "resources/readers/references/4f31e2cc5ff4.md"
+    },
+    {
+      "source_relative_path": "业务复习/量化岗位笔试Wiki/02_主题分析/01_数据与工程/README.md",
+      "source_sha256": "ec5e5a398e850ade65666354be9719919b5ee95565c277eab466140b240f89a8",
+      "public_path": "resources/readers/references/db07e57f159f.md"
+    },
+    {
+      "source_relative_path": "业务知识/高频做市基础模型demo/README.md",
+      "source_sha256": "00a692a3f1ca75980e51ed6e5bf0cd5ecf55f149414d7852448c14433559378c",
+      "public_path": "resources/readers/references/d7456c4952c7.md"
+    }
+  ],
+  "files": [
+    {
+      "path": "resources/readers/core_questions.md",
+      "bytes": 1231,
+      "sha256": "f511ee7ec232eec0454927d5053a89172143b422cf7e3c40e93a8316c417479d"
+    },
+    {
+      "path": "resources/readers/data_wiki.md",
+      "bytes": 4205,
+      "sha256": "91daf35d3b3dde8d2ceb45285d73f41448af0db942dde734744440f741ce6f18"
+    },
+    {
+      "path": "resources/readers/ds_notes.md",
+      "bytes": 105061,
+      "sha256": "097e8b3e527b57afe0e939048391da0a7f8686597c6ddf7f77d6eeb4d8ad37d7"
+    },
+    {
+      "path": "resources/readers/factor_ic.md",
+      "bytes": 2253,
+      "sha256": "0d9371ef55a4b0f2581da51e2dfed30593f47b1632701210a07458a7bc5d8436"
+    },
+    {
+      "path": "resources/readers/hot100_binary.md",
+      "bytes": 15066,
+      "sha256": "6cf9a319066f4f64358c4061a24aa5cf423950a045009136e7abf484a75fbd6f"
+    },
+    {
+      "path": "resources/readers/hot100_dp1.md",
+      "bytes": 12952,
+      "sha256": "5a117cf487ee1bfde6ab09dae0c3643fe4a5516aa581ef8fb09d6af7cf86e5e9"
+    },
+    {
+      "path": "resources/readers/hot100_hash.md",
+      "bytes": 14633,
+      "sha256": "bba1c2b283f48079fc06f8cdc113c1ae62de285fb5f529acae9255db914f44f2"
+    },
+    {
+      "path": "resources/readers/hot100_stack.md",
+      "bytes": 14245,
+      "sha256": "e44b5f3055cf369cc6dcf1967f3687d8fe69879ce5dcbddc3bfee05d5521c101"
+    },
+    {
+      "path": "resources/readers/hot100_tree.md",
+      "bytes": 14697,
+      "sha256": "e06ae45482fa2f76a7e5902464fbb899756d6d6d22457746e98bc1ab5e8922be"
+    },
+    {
+      "path": "resources/readers/hot100_window.md",
+      "bytes": 15355,
+      "sha256": "aab88e884c1500eb5058c063064e697197222af581ce1b73f967adb9cface137"
+    },
+    {
+      "path": "resources/readers/microstructure.md",
+      "bytes": 9275,
+      "sha256": "83668896af28b3cd0f5c8c7927d6f44643ab780b582134c746057d6110b85b49"
+    },
+    {
+      "path": "resources/readers/optiver_overview.md",
+      "bytes": 15214,
+      "sha256": "a9e447e231c2f1848b7119f9f8f2032004908cc07fa8ab0201c561802e3a2444"
+    },
+    {
+      "path": "resources/readers/probability/chapter_01.md",
+      "bytes": 1004,
+      "sha256": "c0d9c49f3d36abb588d5312e48c155eabe88bb28777ec1b84f01154f80e16576"
+    },
+    {
+      "path": "resources/readers/probability/chapter_02.md",
+      "bytes": 63509,
+      "sha256": "7c588c3909f95947871464b04bc47a737dcffdbc9124b36709cef59e153e722e"
+    },
+    {
+      "path": "resources/readers/probability/chapter_03.md",
+      "bytes": 4001,
+      "sha256": "45fb2209c9a0fbda564b2869febd7e6d7b28a04b102d1914c2f32647e5225b67"
+    },
+    {
+      "path": "resources/readers/probability/chapter_04.md",
+      "bytes": 46547,
+      "sha256": "a22ee365542f650296e61187b97d28b81e609a8032298b9c5305eb0c4939ffc1"
+    },
+    {
+      "path": "resources/readers/probability/chapter_05.md",
+      "bytes": 6434,
+      "sha256": "df4808e205bd3e8c50be3643dbf82abc868fdbe8716eaf152e70be87605ff5ec"
+    },
+    {
+      "path": "resources/readers/probability/chapter_06.md",
+      "bytes": 10725,
+      "sha256": "d1bd54e779198b777438ced150bfcf4dd35c760cd13f8c98d90b61f8818269eb"
+    },
+    {
+      "path": "resources/readers/probability/chapter_07.md",
+      "bytes": 13599,
+      "sha256": "8999a69e61113269ef99c906f99aea95e13cd44f1fbf9cfbfb7dab3bccf69f4f"
+    },
+    {
+      "path": "resources/readers/probability/chapter_08.md",
+      "bytes": 22998,
+      "sha256": "b8f574e6a21a52388585f3623cfbda234da9053311426b5d1efebebf2db338d0"
+    },
+    {
+      "path": "resources/readers/probability/chapter_09.md",
+      "bytes": 4141,
+      "sha256": "4f834cccc9ae6c19844d9bfacf23c541c3879222683149fe02342b9ffa18ea6b"
+    },
+    {
+      "path": "resources/readers/probability/chapter_10.md",
+      "bytes": 7989,
+      "sha256": "52b835589d4d423a374504bccb198e0794f11219bb049017881d429a6573ab4b"
+    },
+    {
+      "path": "resources/readers/probability/chapter_11.md",
+      "bytes": 4412,
+      "sha256": "1644818ac70b4dc998b4763166f779f6d9bd6834c988523f11e69eb87e54c2b0"
+    },
+    {
+      "path": "resources/readers/probability_notes.md",
+      "bytes": 995,
+      "sha256": "618773697705635bedbdabc36af0f9d5a0bea9db4c44162c25bc601706406025"
+    },
+    {
+      "path": "resources/readers/qd_wiki.md",
+      "bytes": 3461,
+      "sha256": "440bf1953ccf29cf417a30501e368472850d89cf10c8b4c3a26fb31e3dca031a"
+    },
+    {
+      "path": "resources/readers/qr_wiki.md",
+      "bytes": 3513,
+      "sha256": "0835903923896ab3687abc34a489b01cac5e5377a84d8c2f6c95f9c48d05412c"
+    },
+    {
+      "path": "resources/readers/questions/category_01.md",
+      "bytes": 3407,
+      "sha256": "5ab9b130eb46339cacea1308411e8cac4b26ac1ae77d231ab9a15350e80601b0"
+    },
+    {
+      "path": "resources/readers/questions/category_02.md",
+      "bytes": 4345,
+      "sha256": "6ad9f94f06227f23110e95017bf538fede2554c6efc28fff985624cd76524774"
+    },
+    {
+      "path": "resources/readers/questions/category_03.md",
+      "bytes": 23778,
+      "sha256": "efdcc62fa9ef9970ac5a3642c4e2e0a9d3d7de38b043427b06b6a6fa2dccc5e4"
+    },
+    {
+      "path": "resources/readers/questions/category_04.md",
+      "bytes": 10706,
+      "sha256": "b4b7b0742025f2746cfa4d91a4647d0c7cfbfe64035611097cf8d0231c9fa462"
+    },
+    {
+      "path": "resources/readers/questions/category_05.md",
+      "bytes": 4206,
+      "sha256": "a597109a55978e9af0b9dc5fc9c9df8bbdeef2f5c9628f39b4827b94621406bb"
+    },
+    {
+      "path": "resources/readers/questions/category_06.md",
+      "bytes": 3797,
+      "sha256": "67e5df0c1cdd536c03cb99d35d65df3288a9b364bfffe56ce402b72a62557005"
+    },
+    {
+      "path": "resources/readers/questions/category_07.md",
+      "bytes": 7363,
+      "sha256": "5f651ea127e35340fb44170c599821f6b840e35ce757ca5e5f3d3a3e8f04981b"
+    },
+    {
+      "path": "resources/readers/questions/category_08.md",
+      "bytes": 4900,
+      "sha256": "55754a2d9c5d88bf9e3cb77d6757c715fd823ea7273a2e7f03da36894467d77d"
+    },
+    {
+      "path": "resources/readers/questions/category_09.md",
+      "bytes": 7322,
+      "sha256": "1d258596071280dab9afc7f8d01b34c1eb77eb5481dab2f6644690d1e0660dd6"
+    },
+    {
+      "path": "resources/readers/questions/category_10.md",
+      "bytes": 1294,
+      "sha256": "b2758bddda7c02b3fdbffe767dae8cf662a79f2996295cb8c1dfb9c3a9001289"
+    },
+    {
+      "path": "resources/readers/questions/category_11.md",
+      "bytes": 3807,
+      "sha256": "6eea80050ead2d07b31789c9724beff3cc5e93c8b71c10030237c2432faa9393"
+    },
+    {
+      "path": "resources/readers/questions/category_12.md",
+      "bytes": 2963,
+      "sha256": "dd1da1bcc9134b4aaaef56f1199e8ea9640b1059b6559748daed76b66a4ae670"
+    },
+    {
+      "path": "resources/readers/questions/category_13.md",
+      "bytes": 3139,
+      "sha256": "6831daf3e5a743d273f1f35c2a72938c9cbf814aba5f1037e81a14ef02e46fee"
+    },
+    {
+      "path": "resources/readers/references/1140b6f059a2.md",
+      "bytes": 10214,
+      "sha256": "e8fa381b61b2be4db7275bc0502bf3398a691ca0a88ddabf242c55f2cb22904f"
+    },
+    {
+      "path": "resources/readers/references/223b187ecc53.md",
+      "bytes": 20857,
+      "sha256": "f2bbc390498dab0f2acfff5751feb24a6064882290793392297271776a677f94"
+    },
+    {
+      "path": "resources/readers/references/260183506bd2.md",
+      "bytes": 20794,
+      "sha256": "3f13adc01e52ed41913b30ccb26a79b1a152ae0e353ab042fd27cb767aa87227"
+    },
+    {
+      "path": "resources/readers/references/283c791863ff.md",
+      "bytes": 18272,
+      "sha256": "8b83878f32859bd7e200ceabeff3c38f21f7fb20cc9bd219ce036f5eb56afd78"
+    },
+    {
+      "path": "resources/readers/references/2a5b68070393.md",
+      "bytes": 9373,
+      "sha256": "429a65d9af6af7af80fa65be8649c2b0586d06224771008ae39a3be1c2a2b9d2"
+    },
+    {
+      "path": "resources/readers/references/33e48c9cffe7.md",
+      "bytes": 9981,
+      "sha256": "ff05ff8c71cfebd4fc48927b41e665ca0f163d632d61caaa2005494a048ec73b"
+    },
+    {
+      "path": "resources/readers/references/3b94c4add797.md",
+      "bytes": 20987,
+      "sha256": "d2024ff7bc53c756f4c837c3b3871039acf8d4aca08cd7a832c614b35d19e1b3"
+    },
+    {
+      "path": "resources/readers/references/3d33bf1d84f0.md",
+      "bytes": 9536,
+      "sha256": "af6539e668169db3deb289a70e3316d89407d4aea52d6562e559400b3207c93c"
+    },
+    {
+      "path": "resources/readers/references/4f31e2cc5ff4.md",
+      "bytes": 24301,
+      "sha256": "7bf076cd5d0a7ff06ceef2e0eb825d780c08bb56fa6c0690924a5ac7c61610d9"
+    },
+    {
+      "path": "resources/readers/references/66834d2bad23.md",
+      "bytes": 10276,
+      "sha256": "6afe2c1398375037b3077e8822ed3b46587f032786f5278f23bce20ed69baabe"
+    },
+    {
+      "path": "resources/readers/references/68cb9056b03b.md",
+      "bytes": 9985,
+      "sha256": "d1ae26a5586e5657542c411832a5ac50e3e0a9b57bda7251bcf36b829d2f92c4"
+    },
+    {
+      "path": "resources/readers/references/6e55f7b6b250.md",
+      "bytes": 7824,
+      "sha256": "0b9afe559f4a3aea7792e982ea2630850ed6d1cf1fc99ed11d711f483afa44dd"
+    },
+    {
+      "path": "resources/readers/references/770a20da24e3.md",
+      "bytes": 5901,
+      "sha256": "6e1e377330da9b081f054fb0440105c5ff4d1fb6ba54493b879b93d8b2ced573"
+    },
+    {
+      "path": "resources/readers/references/7e53fa40d9ce.md",
+      "bytes": 11763,
+      "sha256": "0fc456477c2a12b0d747e43fbd95239c72ffac7cf866091031a18478604d7364"
+    },
+    {
+      "path": "resources/readers/references/873a6bffaf78.md",
+      "bytes": 9637,
+      "sha256": "15d16a3d680dc2949ad4007d628a598918b92c3b91d56b80621d71819953d815"
+    },
+    {
+      "path": "resources/readers/references/953e633a5f6e.md",
+      "bytes": 12764,
+      "sha256": "ecb335bf280ad7cbb4bf5f5efee5a260d134464f0bd5b0acde264d674233d73b"
+    },
+    {
+      "path": "resources/readers/references/aad00e98bac1.md",
+      "bytes": 10652,
+      "sha256": "6820ab546835723875f99127e340d9303a55275ad830acb5b8c67b81340e1d5f"
+    },
+    {
+      "path": "resources/readers/references/af857dddcf95.md",
+      "bytes": 18073,
+      "sha256": "965e2228f99f8e04ef15f53c73f5e8c6484afbc4b017865799b42edddd209a56"
+    },
+    {
+      "path": "resources/readers/references/b2229405bde7.md",
+      "bytes": 8660,
+      "sha256": "2dce1649e3340b1e9ca36f27ca60b942c8b9382f7105cbb193e3d2cdaf13f66a"
+    },
+    {
+      "path": "resources/readers/references/ba6bdfa343b6.md",
+      "bytes": 10321,
+      "sha256": "2a41dc1acb4a4e837bf7f5bd67e3ce9341aa4adb851d6097675ceae135df0adf"
+    },
+    {
+      "path": "resources/readers/references/c0cf98e471d7.md",
+      "bytes": 5893,
+      "sha256": "e36cec68640f2fb22d54f45f13e8091cd66066b1ad80b5ad09134ba408ef17a1"
+    },
+    {
+      "path": "resources/readers/references/cadcd1f9e3aa.md",
+      "bytes": 10953,
+      "sha256": "af2706ce3ff8f55feafe49ee7b9297a03912b0c0dee53584dc5a5bbab8b96c0f"
+    },
+    {
+      "path": "resources/readers/references/ce659780c772.md",
+      "bytes": 8931,
+      "sha256": "af6eb8648bb4b463eebdb0a91f3630fd9ae99678ea10cef3fa9d77de551a65b7"
+    },
+    {
+      "path": "resources/readers/references/d7456c4952c7.md",
+      "bytes": 1408,
+      "sha256": "68b05740e5c738614c7c9ed625021ddb3ed7037f19cb585253f2483da1a64ccf"
+    },
+    {
+      "path": "resources/readers/references/db07e57f159f.md",
+      "bytes": 4876,
+      "sha256": "c51f743b9e052d4868f6bbd13c91029e6d4d9e65fb47b85b04ddb8d4152f5b51"
+    },
+    {
+      "path": "resources/readers/references/db622d56732b.md",
+      "bytes": 20842,
+      "sha256": "682b19aa271a09e0f22fefd080220f82cc81368bb8fc52daf260c7434d7bf997"
+    },
+    {
+      "path": "resources/readers/references/f40e54304fbc.md",
+      "bytes": 7574,
+      "sha256": "278956dccd561e3383bef03d5e59b4ba63e03ccc0e39f1c1adddd52d236a3abb"
+    }
+  ]
+}

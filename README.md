@@ -2,7 +2,7 @@
 
 从 **2026-10-02 到 2026-10-31**，用 30 个小时建立概率统计、常用算法和量化研究的基础训练闭环。路线偏量化研究，同时补开发与数据工程的共同基础。
 
-每一天都有完整练习题面、时间分配、提示和验收条件。原资料库用于补充阅读；只使用这个仓库也能开始练习。
+每一天都有完整练习题面、时间分配、提示和验收条件。补充资料提供仓库内的在线正文，只使用这个仓库即可阅读和练习。
 
 ## 今天开始
 
@@ -57,15 +57,17 @@ python3 scripts/study.py record 1 --status needs_review --minutes 60 --result pa
 
 ## 材料与练习
 
-- [本地材料索引](resources/README.md)：定位已有概率讲义、HOT100 和岗位 Wiki。
+- [在线资料索引](resources/README.md)：直接阅读概率讲义、HOT100 和岗位 Wiki 的派生正文，无需本地原资料库。
 - [范围与来源](resources/scope.md)：说明题库标签、历史公司材料和覆盖边界。
 - [练习入口](exercises/README.md)：第一天的代码起步模板。
 - [回测练习](exercises/mini_project/README.md)：固定合成价格数据与实现脚手架。
 - [每日笔记模板](templates/daily_note.md)：记录推导、代码、错误和口述。
 
-从其他目录克隆后，可用 `--source-root` 指定原资料库，或设置 `QUANT_SOURCE_ROOT`。仓库中不包含原 PDF、录屏、Notebook 或开源镜像。
+在线资料正文可直接在 GitHub 阅读，导出来源和哈希见 [正文清单](resources/publish_manifest.json)。如需定位本地原文件，可用 `--source-root` 指定原资料库，或设置 `QUANT_SOURCE_ROOT`。原 PDF、录屏、Notebook 和开源镜像在本地保留；仓库发布的是清理后的可读 Markdown。
 
 ## 校验
+
+资料预览报错时，可使用 [Markdown 正文与 CSV 原文备用入口](resources/TROUBLESHOOTING.md)。
 
 ```bash
 python3 scripts/validate_plan.py

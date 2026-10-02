@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import importlib.util
 import json
 import os
@@ -82,7 +83,16 @@ class TemporaryRepositoryTest(unittest.TestCase):
         self.write_plan()
         write_csv(self.root / "progress/progress.csv", self.progress_rows, self.study.PROGRESS_FIELDS)
         write_csv(self.root / "progress/log.csv", [], self.study.LOG_FIELDS)
-        self.resource_rows = [{"id": "sample", "relative_path": "library/sample.md"}]
+        self.resource_rows = [{
+            "id": "sample", "title": "公开示例讲义", "relative_path": "library/sample.md",
+            "kind": "markdown", "usage": "按需阅读", "scope_note": "测试资料",
+            "public_path": "resources/readers/sample.md",
+        }]
+        (self.root / "resources/readers").mkdir()
+        (self.root / "resources/readers/sample.md").write_text(
+            "# Sample\n\n## Definition\n\n" + "公开正文：解释定义并保留足够的独立阅读内容。\n" * 10,
+            encoding="utf-8",
+        )
         self.write_resources()
         (self.root / "resources/README.md").write_text('<span id="sample"></span>\n', encoding="utf-8")
 
@@ -93,7 +103,9 @@ class TemporaryRepositoryTest(unittest.TestCase):
         write_csv(self.root / "plan/30_days.csv", self.plan_rows, PLAN_FIELDS)
 
     def write_resources(self) -> None:
-        write_csv(self.root / "resources/materials.csv", self.resource_rows, ["id", "relative_path"])
+        write_csv(self.root / "resources/materials.csv", self.resource_rows, [
+            "id", "title", "relative_path", "kind", "usage", "scope_note", "public_path",
+        ])
 
     def state_snapshot(self) -> dict[str, bytes]:
         """Capture all learner state, including whether a note/log was created."""
@@ -250,6 +262,90 @@ class PlanValidationTests(TemporaryRepositoryTest):
         self.write_plan()
         errors = self.validator.validate(self.root)
         self.assertTrue(errors, "90 分钟配置与30小时承诺冲突，应当被拒绝。")
+
+    def test_missing_blank_or_small_public_reader_is_rejected(self) -> None:
+        for value in ("", "resources/readers/missing.md", "/absolute.md", "../outside.md"):
+            with self.subTest(value=value):
+                self.resource_rows[0]["public_path"] = value
+                self.write_resources()
+                self.assertTrue(any("public_path" in error for error in self.validator.validate(self.root)))
+        self.resource_rows[0]["public_path"] = "resources/readers/sample.md"
+        self.write_resources()
+        (self.root / "resources/readers/sample.md").write_text("# 只有标题\n", encoding="utf-8")
+        self.assertTrue(any("public_path" in error for error in self.validator.validate(self.root)))
+
+    def test_blank_source_path_is_rejected(self) -> None:
+        self.resource_rows[0]["relative_path"] = ""
+        self.write_resources()
+        self.assertTrue(any("relative_path" in error for error in self.validator.validate(self.root)))
+
+    def test_broken_file_and_fragment_are_detected(self) -> None:
+        document = self.root / "days/day01.md"
+        original = document.read_text(encoding="utf-8")
+        for target, expected in (
+            ("../resources/readers/missing.md", "不存在的文件"),
+            ("../resources/readers/sample.md#absent", "不存在的锚点"),
+        ):
+            with self.subTest(target=target):
+                document.write_text(original + f"\n[阅读]({target})\n", encoding="utf-8")
+                self.assertTrue(any(expected in error for error in self.validator.validate(self.root)))
+
+    def test_spaced_paths_html_ids_heading_slugs_and_fences_are_supported(self) -> None:
+        target = self.root / "resources/readers/中文 (copy).md"
+        target.write_text(
+            "# 中文：概念\n\n## Hello, World!\n\n## Hello, World!\n\n"
+            "<span id='explicit_id'></span>\n", encoding="utf-8",
+        )
+        document = self.root / "days/day01.md"
+        with document.open("a", encoding="utf-8") as handle:
+            handle.write(
+                "\n[中文](<../resources/readers/中文 (copy).md#中文概念>)\n"
+                "[标题](<../resources/readers/中文 (copy).md#hello-world>)\n"
+                "[重复标题](<../resources/readers/中文 (copy).md#hello-world-1>)\n"
+                "[HTML](<../resources/readers/中文 (copy).md#explicit_id>)\n"
+                "[编码路径](../resources/readers/%E4%B8%AD%E6%96%87%20%28copy%29.md#explicit_id)\n"
+                "```markdown\n[代码中的假链接](missing.md#fake)\n```\n"
+                "~~~text\n[另一个假链接](absent.md)\n~~~\n"
+            )
+        self.assertEqual(self.validator.validate(self.root), [])
+
+    def test_csv_missing_columns_duplicate_headers_and_wrong_width_fail(self) -> None:
+        path = self.root / "resources/materials.csv"
+        original = path.read_text(encoding="utf-8")
+        malformed = [
+            ("id,relative_path\nsample,library/sample.md\n", "必需列"),
+            ("id,id\nsample,sample\n", "表头重复"),
+            (original + "unexpected,row\n", "列宽异常"),
+        ]
+        for content, expected in malformed:
+            with self.subTest(expected=expected):
+                path.write_text(content, encoding="utf-8")
+                self.assertTrue(any(expected in error for error in self.validator.validate(self.root)))
+
+    def test_manifest_hash_size_and_missing_file_are_checked(self) -> None:
+        reader = self.root / "resources/readers/sample.md"
+        content = reader.read_bytes()
+        manifest = {
+            "version": 1,
+            "resources": [{
+                "id": "sample", "source_relative_path": "library/sample.md",
+                "source_sha256": "0" * 64, "public_path": "resources/readers/sample.md",
+                "transformation": "test fixture",
+            }],
+            "files": [{"path": "resources/readers/sample.md", "bytes": len(content), "sha256": hashlib.sha256(content).hexdigest()}],
+        }
+        path = self.root / "resources/publish_manifest.json"
+        path.write_text(json.dumps(manifest), encoding="utf-8")
+        self.assertEqual(self.validator.validate(self.root), [])
+        reader.write_bytes(content.replace("定义".encode(), "概念".encode()))
+        errors = self.validator.validate(self.root)
+        self.assertTrue(any("SHA256" in error for error in errors))
+        self.assertFalse(any("大小不一致" in error for error in errors))
+        reader.write_bytes(content + b"\n")
+        errors = self.validator.validate(self.root)
+        self.assertTrue(any("大小不一致" in error for error in errors))
+        reader.unlink()
+        self.assertTrue(any("发布清单文件不存在" in error for error in self.validator.validate(self.root)))
 
 
 if __name__ == "__main__":
